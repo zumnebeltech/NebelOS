@@ -9,8 +9,58 @@ set -ouex pipefail
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
-# this installs a package from fedora repos
-dnf5 install -y tmux 
+# Negativo17
+# dnf -y config-manager addrepo --from-repofile="https://negativo17.org/repos/fedora-nvidia.repo
+# dnf -y config-manager addrepo --from-repofile="https://negativo17.org/repos/fedora-multimedia.repo
+# Enabling needed COPRs
+#dnf -y copr enable bieszczaders/kernel-cachyos
+#dnf -y copr enable bieszczaders/kernel-cachyos-addons
+#dnf -y copr enable pgdev/ghostty
+#dnf -y copr enable peterwu/iosevka
+#dnf -y copr enable solopasha/hyprland
+#dnf -y copr enable yalter/niri
+#dnf -y copr enable tofik/nwg-shell
+#dnf -y copr enable atim/starship
+#dnf -y copr enable peterwu/iosevka
+#dnf -y config-manager addrepo --from-repofile=https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+#dnf -y config-manager --add-repo https://terra.fyralabs.com/terra.repo
+dnf -y check-update make-cache --refresh
+
+# Installing extra packages over Workstation
+dnf -y install \
+fish atuin hyprland hyprland-plugin-hyprbars stow hyprlock hypridle hyprpaper hyprlock hyprshot hyprdim hyprsunset \
+cliphist waybar waypaper blueman network-manager-applet xwaylandvideobridge udiskie mpv feh zoxide jq qt6ct qt5ct \
+qt6-qtwayland qt5-qtwayland copyq lsd ImageMagick GraphicsMagick swww wlogout wl-paste wl-clipboard wl-copy \
+nwg-clipman nwg-shell-config nwg-drawer python-psutil fd brightnessctl btrbk micro restic bat cosmic-term starship \
+swaync cargo satty vips uwsm breeze-gtk plasma-breeze rsms-inter{,-vf}-fonts jetbrains-mono-fonts-all iosevka-etoile-fonts \
+meson cmake scdoc dmenu python3-pyxdg python3-dbus gtk3-devel gtk4-devel gobject-introspection-devel gtk-layer-shell-devel \
+kdeconnectd kde-connect-nautilus alacritty kitty btrbk zoxide direnv opendoas niri xwayland-satellite swayidle swaylock-effects \
+swaybg xfce-polkit lxqt-policykit restic micro labwc ghostty wpaperd wlsunset
+# brave-{browser,keyring} --allowerasing
+#dnf -y ghostty --best --allowerasing
+#dnf -y install libcap-ng libcap-ng-devel procps-ng procps-ng-devel cachyos-ksm-settings kernel-cachyos kernel-cachyos-devel-matched
+
+#pushd /etc/yum.repos.d || return
+#curl -sL# https://raw.githubusercontent.com/zumnebeltech/ZumNebelOS/refs/heads/main/<filename>
+#popd
+
+mkdir -pv /etc/kernel/postinst.d
+#pushd /etc/kernel/postinst.d || return
+#curl -sOL# https://raw.githubusercontent.com/zumnebeltech/ZumNebelOS/refs/heads/main/00-signing-cachyos-kernel
+#curl -sOL# https://raw.githubusercontent.com/zumnebeltech/ZumNebelOS/refs/heads/main/99-cachyos-default
+#popd
+
+#fish_config="
+#if status is-interactive
+#    set -U fish_greeting
+#    # Commands to run in interactive sessions can go here
+#    starship init fish | source
+#    atuin init fish | source
+#    zoxide init fish | source
+#    direnv hook fish | source
+#end
+#"
+#printf "%b" "${fish_config}" | tee
 
 # Use a COPR Example:
 #

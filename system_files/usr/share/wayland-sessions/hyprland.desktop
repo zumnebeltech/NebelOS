@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Hyprland
+Comment=An intelligent dynamic tiling Wayland compositor
+Exec=/usr/bin/Hyprland
+TryExec=/usr/bin/Hyprland
+Type=Application
+DesktopNames=Hyprland
+X-GDM-SessionRegisters=true

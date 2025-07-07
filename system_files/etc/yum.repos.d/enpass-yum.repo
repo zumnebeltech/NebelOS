@@ -1,0 +1,13 @@
+[enpass]
+name=Enpass password manager repository
+baseurl=https://yum.enpass.io/stable/$basearch/
+gpgcheck=1
+gpgkey=https://yum.enpass.io/RPM-GPG-KEY-enpass-signing-key
+enabled=1
+
+[enpass-testing]
+name=Enpass password manager repository
+baseurl=https://yum.enpass.io/testing/$basearch/
+gpgcheck=1
+gpgkey=https://yum.enpass.io/RPM-GPG-KEY-enpass-signing-key
+enabled=0

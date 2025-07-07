@@ -1,0 +1,17 @@
+[Unit]
+Description=Hyprland - Tiling compositor with the looks
+Documentation=man:Hyprland(1)
+BindsTo=graphical-session.target
+Before=graphical-session.target
+Wants=xdg-desktop-autostart.target
+Wants=graphical-session-pre.target
+After=graphical-session-pre.target
+
+[Service]
+Slice=session.slice
+Type=notify
+ExecStartPre=systemctl --user import-environment DISPLAY WAYLAND_DISPLAY XDG_SESSION_TYPE XDG_CURRENT_DESKTOP NIRI_SOCKET
+ExecStart=/usr/bin/Hyprland
+ExecStop=/usr/bin/loginctl terminate-session "$XDG_SESSION_ID"
+ExecStopPost=systemctl --user unset-environment DISPLAY WAYLAND_DISPLAY HYPRLAND_INSTANCE_SIGNATURE XDG_CURRENT_DESKTOP
+Restart=on-failure

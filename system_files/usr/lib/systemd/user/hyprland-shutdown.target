@@ -1,0 +1,8 @@
+[Unit]
+Description=Shutdown running hyprland session
+DefaultDependencies=no
+StopWhenUnneeded=true
+
+Conflicts=graphical-session.target graphical-session-pre.target
+After=graphical-session.target graphical-session-pre.target
+OnFailureJobMode=replace-irreversibly
