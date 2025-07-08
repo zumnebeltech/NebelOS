@@ -15,15 +15,15 @@ set -ouex pipefail
 # Enabling needed COPRs
 #dnf -y copr enable bieszczaders/kernel-cachyos
 #dnf -y copr enable bieszczaders/kernel-cachyos-addons
-#dnf -y copr enable pgdev/ghostty
-#dnf -y copr enable peterwu/iosevka
-#dnf -y copr enable solopasha/hyprland
-#dnf -y copr enable yalter/niri
-#dnf -y copr enable tofik/nwg-shell
-#dnf -y copr enable atim/starship
-#dnf -y copr enable peterwu/iosevka
-#dnf -y config-manager addrepo --from-repofile=https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
-#dnf -y config-manager --add-repo https://terra.fyralabs.com/terra.repo
+dnf -y copr enable pgdev/ghostty
+dnf -y copr enable peterwu/iosevka
+dnf -y copr enable solopasha/hyprland
+dnf -y copr enable yalter/niri
+dnf -y copr enable tofik/nwg-shell
+dnf -y copr enable atim/starship
+dnf -y copr enable peterwu/iosevka
+dnf -y config-manager addrepo --from-repofile=https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+dnf -y config-manager --add-repo https://terra.fyralabs.com/terra.repo
 dnf -y check-update make-cache --refresh
 
 # Installing extra packages over Workstation
@@ -35,7 +35,7 @@ nwg-clipman nwg-shell-config nwg-drawer python-psutil fd brightnessctl btrbk mic
 swaync cargo satty vips uwsm breeze-gtk plasma-breeze rsms-inter{,-vf}-fonts jetbrains-mono-fonts-all iosevka-etoile-fonts \
 meson cmake scdoc dmenu python3-pyxdg python3-dbus gtk3-devel gtk4-devel gobject-introspection-devel gtk-layer-shell-devel \
 kdeconnectd kde-connect-nautilus alacritty kitty btrbk zoxide direnv opendoas niri xwayland-satellite swayidle swaylock-effects \
-swaybg xfce-polkit lxqt-policykit restic micro labwc ghostty wpaperd wlsunset
+swaybg xfce-polkit lxqt-policykit restic micro labwc ghostty swww-daemon wpaperd wlsunset --skip-unavailable
 # brave-{browser,keyring} --allowerasing
 #dnf -y ghostty --best --allowerasing
 #dnf -y install libcap-ng libcap-ng-devel procps-ng procps-ng-devel cachyos-ksm-settings kernel-cachyos kernel-cachyos-devel-matched
