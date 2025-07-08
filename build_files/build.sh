@@ -21,7 +21,7 @@ dnf -y copr enable yalter/niri
 dnf -y copr enable tofik/nwg-shell
 dnf -y copr enable atim/starship
 #dnf -y config-manager addrepo --from-repofile=https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
-dnf -y install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
+#dnf -y install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
 dnf -y check-update make-cache --refresh
 
 # Installing extra packages over Workstation
