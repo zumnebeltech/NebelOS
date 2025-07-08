@@ -3,7 +3,7 @@ FROM scratch AS ctx
 COPY build_files /
 
 # Base Image
-FROM ghcr.io/zumnebeltech/nebelos:latest
+FROM ghcr.io/ublue-os/bluefin-nvidia:stable
 COPY system_files /
 
 ## Other possible base images include:
