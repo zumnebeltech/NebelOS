@@ -16,7 +16,7 @@ set -ouex pipefail
 #dnf -y copr enable bieszczaders/kernel-cachyos
 #dnf -y copr enable bieszczaders/kernel-cachyos-addons
 
-gsettings set org.gnome.mutter experimental-features ['scale-monitor-framebuffer', 'kms-modifiers', 'autoclose-xwayland', 'variable-refresh-rate', 'xwayland-native-scaling']
+gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer', 'kms-modifiers', 'autoclose-xwayland', 'variable-refresh-rate', 'xwayland-native-scaling']"
 
 dnf -y copr enable peterwu/iosevka
 dnf -y copr enable solopasha/hyprland
