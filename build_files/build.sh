@@ -24,7 +24,7 @@ dnf -y copr enable yalter/niri
 dnf -y copr enable tofik/nwg-shell
 dnf -y copr enable atim/starship
 #dnf -y config-manager addrepo --from-repofile=https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
-#dnf -y install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
+dnf -y install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
 dnf -y check-update make-cache --refresh
 
 # Installing extra packages over Workstation
@@ -38,7 +38,7 @@ meson cmake scdoc dmenu python3-pyxdg python3-dbus gtk3-devel gtk4-devel gobject
 kdeconnectd kde-connect-nautilus alacritty kitty btrbk zoxide direnv opendoas niri xwayland-satellite swayidle swaylock-effects \
 swaybg xfce-polkit lxqt-policykit restic micro labwc ghostty wpaperd wlsunset --skip-unavailable
 # brave-{browser,keyring} --allowerasing
-#dnf -y ghostty --best --allowerasing
+dnf -y ghostty --best --allowerasing
 #dnf -y install libcap-ng libcap-ng-devel procps-ng procps-ng-devel cachyos-ksm-settings kernel-cachyos kernel-cachyos-devel-matched
 
 #pushd /etc/yum.repos.d || return
