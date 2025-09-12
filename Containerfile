@@ -3,7 +3,7 @@ FROM scratch AS ctx
 COPY build_files /
 
 # Base Image
-FROM ghcr.io/ublue-os/bluefin-nvidia:stable as NebelOS
+FROM ghcr.io/ublue-os/bluefin-nvidia:latest as NebelOS
 COPY system_files /
 
 ## Other possible base images include:
